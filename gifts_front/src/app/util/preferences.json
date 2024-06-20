@@ -1,0 +1,40 @@
+{
+  "preferences": [
+    {
+      "category": "Age",
+      "options": [
+        "Child (6-12)",
+        "Teen (13-17)",
+        "Young Adult (18-24)",
+        "Adult (25-34)",
+        "Middle-aged Adult (35-49)",
+        "Senior (50+)"
+      ]
+    },
+    {
+      "category": "Gender",
+      "options": [
+        "Male",
+        "Female",
+        "Non-binary",
+        "Prefer not to say"
+      ]
+    },
+    {
+      "category": "Hobby",
+      "name": "Sports and Fitness",
+      "options": [
+        "Running",
+        "Cycling",
+        "Swimming",
+        "Yoga",
+        "Gym Workouts",
+        "Team Sports",
+        "Hiking",
+        "Martial Arts",
+        "Dancing",
+        "Gaming"
+      ]
+    }
+  ]
+}
