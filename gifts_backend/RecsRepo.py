@@ -1,12 +1,8 @@
-class RecsRepo:
-    def __init__(self):
-        pass
+from preference_matcher.compare import get_recommendations
 
-    def get_recs(self, data):
-        recs = {
-            "name": "Gift",
-            "description": "Good gift!",
-            "price": 69.69,
-            "url": "mylink.com"
-        }
-        return recs
+
+class RecsRepo:
+    def get_recs(self, input_preferences):
+        # Assuming the get_recommendations function is defined elsewhere and imported
+        recommendations = get_recommendations(input_preferences)
+        return recommendations

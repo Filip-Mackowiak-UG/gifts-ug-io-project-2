@@ -1,0 +1,234 @@
+{
+  "preferences": [
+    {
+      "category": "Age",
+      "options": [
+        "Child (6-12)",
+        "Teen (13-17)",
+        "Young Adult (18-24)",
+        "Adult (25-34)",
+        "Middle-aged Adult (35-49)",
+        "Senior (50+)"
+      ]
+    },
+    {
+      "category": "Gender",
+      "options": [
+        "Male",
+        "Female",
+        "Non-binary",
+        "Prefer not to say"
+      ]
+    },
+    {
+      "category": "Occasion",
+      "options": [
+        "Birthday",
+        "Wedding",
+        "Anniversary",
+        "Baby Shower",
+        "Graduation",
+        "Christmas",
+        "Valentine's Day",
+        "Mother's Day",
+        "Father's Day",
+        "Housewarming"
+      ]
+    },
+    {
+      "category": "Personal Traits",
+      "options": [
+        "Introverted",
+        "Extroverted",
+        "Adventurous",
+        "Creative",
+        "Intellectual",
+        "Humorous",
+        "Practical",
+        "Sentimental"
+      ]
+    },
+    {
+      "category": "Relationship to Recipient",
+      "options": [
+        "Mother",
+        "Father",
+        "Son",
+        "Daughter",
+        "Sister",
+        "Brother",
+        "Grandmother",
+        "Grandfather",
+        "Boyfriend",
+        "Girlfriend",
+        "Wife",
+        "Husband",
+        "Friend",
+        "Colleague",
+        "Neighbor"
+      ]
+    },
+    {
+      "category": "Gift Preferences",
+      "options": [
+        "Practical",
+        "Symbolic",
+        "Experience"
+      ]
+    },
+    {
+      "category": "Budget",
+      "options": [
+        "$",
+        "$$",
+        "$$$"
+      ]
+    },
+    {
+      "category": "Pet Ownership",
+      "options": [
+        "Yes",
+        "Dog",
+        "Cat",
+        "Fish",
+        "Bird",
+        "Reptile",
+        "No"
+      ]
+    },
+    {
+      "category": "Hobby",
+      "subcategories": [
+        {
+          "name": "Sports and Fitness",
+          "options": [
+            "Running",
+            "Cycling",
+            "Swimming",
+            "Yoga",
+            "Gym Workouts",
+            "Team Sports",
+            "Hiking",
+            "Martial Arts",
+            "Dancing"
+          ]
+        },
+        {
+          "name": "Arts and Crafts",
+          "options": [
+            "Painting",
+            "Drawing",
+            "Photography",
+            "Sculpting",
+            "Knitting/Crocheting",
+            "Sewing",
+            "Pottery",
+            "Woodworking",
+            "Scrapbooking",
+            "Jewelry Making"
+          ]
+        },
+        {
+          "name": "Music",
+          "options": [
+            "Playing Instruments",
+            "Singing",
+            "Music Production",
+            "DJing",
+            "Collecting Vinyl Records",
+            "Attending Concerts"
+          ]
+        },
+        {
+          "name": "Technology and Gadgets",
+          "options": [
+            "Coding/Programming",
+            "Robotics",
+            "Drones",
+            "Home Automation",
+            "Video Gaming",
+            "Building Computers"
+          ]
+        },
+        {
+          "name": "Outdoor Activities",
+          "options": [
+            "Camping",
+            "Fishing",
+            "Gardening",
+            "Bird Watching",
+            "Archery",
+            "Climbing",
+            "Kayaking",
+            "Surfing"
+          ]
+        },
+        {
+          "name": "Reading and Writing",
+          "options": [
+            "Fiction",
+            "Non-fiction",
+            "Poetry",
+            "Comics/Graphic Novels",
+            "Writing Stories/Novels",
+            "Blogging"
+          ]
+        },
+        {
+          "name": "Collecting",
+          "options": [
+            "Stamps",
+            "Coins",
+            "Action Figures",
+            "Antiques",
+            "Art",
+            "Memorabilia (e.g., Sports, Movie)"
+          ]
+        },
+        {
+          "name": "Cooking and Baking",
+          "options": [
+            "Cooking",
+            "Baking",
+            "Brewing (e.g., Beer, Coffee)",
+            "Fermenting (e.g., Pickling, Yogurt Making)",
+            "Cake Decorating",
+            "Grilling/BBQ"
+          ]
+        },
+        {
+          "name": "Travel and Exploration",
+          "options": [
+            "Road Trips",
+            "Backpacking",
+            "Cultural Tourism",
+            "Food Tourism",
+            "Adventure Travel",
+            "Photography (Travel Photography)"
+          ]
+        },
+        {
+          "name": "Board Games and Puzzles",
+          "options": [
+            "Board Games",
+            "Card Games",
+            "Puzzles (e.g., Jigsaw, Sudoku)",
+            "Strategy Games",
+            "Role-playing Games (RPGs)"
+          ]
+        },
+        {
+          "name": "Creative Arts",
+          "options": [
+            "Theater/Acting",
+            "Filmmaking",
+            "Photography",
+            "Graphic Design",
+            "Animation",
+            "Calligraphy"
+          ]
+        }
+      ]
+    }
+  ]
+}

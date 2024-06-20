@@ -8,13 +8,13 @@ import { Product } from "@/app/models/Product";
 import { baseUrl } from "@/app/util/Constants";
 
 export default function Home() {
-  const [product, setProduct] = useState<Product>();
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   async function onClick(data: any) {
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    const product = await fetch(`${baseUrl}/get_recs`, {
+    const response = await fetch(`${baseUrl}/get_recs`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -22,10 +22,14 @@ export default function Home() {
       },
     });
 
-    const productData: Product = await product.json();
-    console.log("productData");
+    const productData: Product[] = await response.json();
+    console.log("productData", productData);
+
+    // Sort products by probability in descending order
+    productData.sort((a, b) => b.probability - a.probability);
+
     setLoading(false);
-    setProduct(productData);
+    setProducts(productData);
   }
 
   return (
@@ -33,7 +37,15 @@ export default function Home() {
       <HomeHeader />
       <Separator className={`mb-4`} />
       <SelectForm onClick={onClick} />
-      <ProductCard product={product} loading={loading} />
+      {loading ? (
+        <p className={`pt-4 flex flex-col justify-center items-center`}>
+          Loading...
+        </p>
+      ) : (
+        products.map((product) => (
+          <ProductCard key={product.id} product={product} loading={loading} />
+        ))
+      )}
     </>
   );
 }

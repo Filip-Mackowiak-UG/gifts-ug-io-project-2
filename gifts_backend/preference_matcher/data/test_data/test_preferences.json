@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "Test 1",
+    "preferences": "Age: Young Adult, Gender: Female, Occasion: Birthday, Personal Traits: Creative and Adventurous, Relationship to Recipient: Sister, Gift Preferences: Experience, Budget: $$, Pet Ownership: Dog, Hobby: Painting and Music."
+  },
+  {
+    "id": 1,
+    "name": "From BF to young adult female (jewellery)",
+    "preferences": "Age: Young Adult, Gender: Female, Occasion: Birthday, Personal Traits: Sentimental, Relationship to Recipient: Boyfriend, Gift Preferences: Symbolic, Budget: $$$, Hobby: Arts and Crafts."
+  },
+  {
+    "id": 2,
+    "name": "Gamer Man",
+    "preferences": "Age: Young Adult, Gender: Male, Occasion: Birthday, Personal Traits: Adventurous, Relationship to Recipient: Girlfriend, Gift Preferences: Practical, Budget: $$$, Hobby: Technology and Gadgets."
+  },
+  {
+    "id": 3,
+    "name": "Gamer Man 2",
+    "preferences": "Age: Young Adult, Gender: Male, Occasion: Birthday, Personal Traits: Adventurous, Relationship to Recipient: Friend, Gift Preferences: Practical, Budget: $$$, Hobby: Gaming."
+  }
+]

@@ -1,0 +1,16 @@
+{
+    "product_id": 2,
+    "category": "Gender",
+    "preferences": [
+        "Male",
+        "Female",
+        "Non-binary",
+        "Prefer not to say"
+    ],
+    "probabilities": [
+        0.2540053427219391,
+        0.2505537271499634,
+        0.2449500411748886,
+        0.25049084424972534
+    ]
+}
