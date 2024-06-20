@@ -33,11 +33,13 @@ export function ProductCard({
         <CardDescription className={`mt-2`}>
           Probability: {product?.probability.toFixed(6)}
         </CardDescription>
-        <CardDescription className={`mt-2`}>
-          <a href={product?.url} target={`_blank`}>
-            Product Link
-          </a>
-        </CardDescription>
+        {product?.url && (
+          <CardDescription className={`mt-2`}>
+            <a href={product?.url} target={`_blank`}>
+              Product Link
+            </a>
+          </CardDescription>
+        )}
       </Card>
     </div>
   );

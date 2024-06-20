@@ -1,7 +1,7 @@
 {
   "preferences": [
     {
-      "category": "Age",
+      "category": "age",
       "options": [
         "Child (6-12)",
         "Teen (13-17)",
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "category": "Gender",
+      "category": "gender",
       "options": [
         "Male",
         "Female",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "category": "Hobby",
+      "category": "hobby",
       "options": [
         "Running",
         "Cycling",

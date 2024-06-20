@@ -21,15 +21,16 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertModel.from_pretrained('bert-base-uncased')
 
 
-def create_dir_if_not_exist(filename):
-    os.makedirs(os.path.dirname(filename), exist_ok=True)
+def create_dir_if_not_exist(path):
+    os.makedirs(path, exist_ok=True)
 
 
 def filter_tokens(description):
     stop_words = set(stopwords.words('english'))
     tokens = nltk.tokenize.word_tokenize(description)
     addit_stopwords = [",", ".", " ", ";"]
-    filtered_tokens = [word for word in tokens if word.lower() not in stop_words and word.lower() not in addit_stopwords]
+    filtered_tokens = [word for word in tokens if
+                       word.lower() not in stop_words and word.lower() not in addit_stopwords]
     return ' '.join(filtered_tokens)
 
 
@@ -41,6 +42,17 @@ def create_embeddings(items):
         outputs = model(**inputs)
         # Use CLS token embedding for better representation
         embedding = outputs.last_hidden_state[:, 0, :].detach().numpy()
+        embeddings.append(embedding)
+    return np.vstack(embeddings)
+
+
+def create_embeddings_v1(items):
+    embeddings = []
+    for item in items:
+        inputs = tokenizer(item, return_tensors='pt', truncation=True, padding=True, max_length=512)
+        outputs = model(**inputs)
+        # Average all token embeddings
+        embedding = outputs.last_hidden_state.mean(dim=1).detach().numpy()
         embeddings.append(embedding)
     return np.vstack(embeddings)
 
@@ -78,7 +90,8 @@ def plot_probabilities_v1(product_names, probabilities_list, filename="probabili
     plt.savefig(filename)
 
 
-def plot_probabilities_v2(product_names, probabilities_list, title="Probability of Each Product Being the Best Gift", filename="probabilities.png"):
+def plot_probabilities_v2(product_names, probabilities_list, title="Probability of Each Product Being the Best Gift",
+                          filename="probabilities.png"):
     create_dir_if_not_exist(filename)
     plt.figure(figsize=(20, 10))
     plt.barh(product_names, probabilities_list, color='skyblue')
@@ -93,7 +106,7 @@ def plot_probabilities_v2(product_names, probabilities_list, title="Probability 
 
 def plot_probabilities(product_names, probabilities_list, title="Probability of Each Product Being the Best Gift",
                        filename="probabilities.png"):
-    create_dir_if_not_exist(filename)
+    create_dir_if_not_exist(os.path.dirname(filename))
 
     # Sort probabilities and product names in descending order
     sorted_indices = np.argsort(probabilities_list)[::-1]
@@ -121,7 +134,7 @@ def plot_probabilities(product_names, probabilities_list, title="Probability of 
 
 
 def plot_embeddings(embedding_matrix, product_names, filename="reduced_embeddings.png"):
-    create_dir_if_not_exist(filename)
+    create_dir_if_not_exist(os.path.dirname(filename))
     pca = PCA(n_components=2)
     reduced_embeddings = pca.fit_transform(embedding_matrix)
 
@@ -180,6 +193,7 @@ for preference in preferences_list:
                     f"./product_categories_data/embeddings/{preference['category']}/embeddings.png")
     for product in products:
         product_description = filter_tokens(product["description"])
+        # product_description = product["description"]
 
         product_preference_similarity_scores = get_similarity_scores(product_description,
                                                                      preference_category_embeddings)
@@ -187,5 +201,6 @@ for preference in preferences_list:
 
         save_probabilities_to_file(product['id'], preference['category'], preference_options, probabilities)
 
-        plot_probabilities(preference_options, probabilities, f"Probability of product: {product['id']} matching given categories",
+        plot_probabilities(preference_options, probabilities,
+                           f"Probability of product: {product['id']} matching given categories",
                            f"./product_categories_data/{product['id']}/{preference['category']}/prob.png")
